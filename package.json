@@ -1,0 +1,19 @@
+{
+  "name": "competition-system-backend",
+  "version": "1.0.0",
+  "description": "安全知识竞赛系统后端",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
