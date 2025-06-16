@@ -14,6 +14,9 @@ router.get('/quick', questionController.getQuickQuestions);
 // 获取风险题
 router.get('/risk', questionController.getRiskQuestions);
 
+// 获取附加赛题目
+router.get('/tieBreaker', questionController.getTieBreakerQuestions);
+
 // 标记题目为已使用
 router.put('/:id/used', questionController.markQuestionAsUsed);
 

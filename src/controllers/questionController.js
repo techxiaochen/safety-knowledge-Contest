@@ -3,9 +3,8 @@ const path = require('path');
 
 // 读取Excel文件
 const loadQuestions = () => {
-  return readQuestionsFromExcel(path.join(__dirname, '../../data/questions.xlsx'));
+    return readQuestionsFromExcel(path.join(__dirname, '../../data/questions.xlsx'));
 };
-
 // 题目数据（内存中缓存）
 let questions = [];
 let usedQuestions = [];
@@ -15,7 +14,10 @@ const loadInitialData = () => {
   questions = loadQuestions();
   usedQuestions = [];
 };
-
+const loadTieBreakerQuestions = () => {
+    return tieBreakerQuestions = loadQuestions().filter(q => q.type === 'tieBreaker');
+};
+loadTieBreakerQuestions()
 // 初始化数据
 loadInitialData();
 
@@ -49,6 +51,13 @@ exports.getRiskQuestions = (req, res) => {
   }
   
   res.json(riskQuestions);
+};
+
+// 获取附加赛题目
+exports.getTieBreakerQuestions = (req, res) => {
+    const tieBreakerQuestions = questions
+        .filter(q => q.type === 'tieBreaker' && !usedQuestions.includes(q.id));
+    res.json(tieBreakerQuestions);
 };
 
 // 标记题目为已使用

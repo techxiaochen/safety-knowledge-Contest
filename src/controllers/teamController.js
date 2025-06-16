@@ -5,7 +5,9 @@ let teams = [
   { id: 3, name: '队伍 3', score: 0 },
   { id: 4, name: '队伍 4', score: 0 },
   { id: 5, name: '队伍 5', score: 0 },
-  { id: 6, name: '队伍 6', score: 0 }
+  { id: 6, name: '队伍 6', score: 0 },
+  { id: 7, name: '队伍 7', score: 0 },
+  { id: 8, name: '队伍 8', score: 0 }
 ];
 
 // 获取所有队伍
